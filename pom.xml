@@ -4,9 +4,9 @@
     <artifactId>platform-context</artifactId>
     <scm>
         <connection>scm:git:git@platform-context:trustedanalytics/platform-context.git</connection>
-        <tag>org.trustedanalytics.platform-context-0.4.1</tag>
+        <tag>HEAD</tag>
     </scm>
-    <version>0.4.1</version>
+    <version>0.4.2-SNAPSHOT</version>
 
     <parent>
         <groupId>org.trustedanalytics</groupId>
