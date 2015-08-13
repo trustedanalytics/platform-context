@@ -1,0 +1,25 @@
+debug:
+server:
+  port: 0
+
+security:
+  ignored: /rest/**
+
+oauth2:
+  client:
+    tokenUri: http://dummy.com
+    authorizationUri: http://dummy.com
+    clientId: dummy
+    clientSecret: dummy
+
+  resource:
+    id: cloud_controller
+    jwt:
+      keyUri: 
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+cf:
+  resource:

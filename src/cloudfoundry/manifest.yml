@@ -1,0 +1,11 @@
+---
+applications:
+- name: platform-context
+  memory: 512M
+  instances: 1
+  host: platform-context
+  path: target/platform-context-${version}.jar
+  services: 
+  - sso
+  env:
+    SPRING_PROFILES_ACTIVE: "cloud"
