@@ -15,8 +15,10 @@
  */
 package org.trustedanalytics.platformcontext.data;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.trustedanalytics.platformcontext.data.externaltools.ExternalTools;
 
 @Component
 public class DataProvider {
@@ -30,10 +32,13 @@ public class DataProvider {
     @Value("${cf.resource}")
     private String apiEndpointUrl;
 
+    @Autowired
+    private ExternalTools externalTools;
+
     public DataProvider() { };
 
     public PlatformContext getData() {
-        return new PlatformContext(apiEndpointUrl);
+        return new PlatformContext(apiEndpointUrl, externalTools);
     }
 
 }

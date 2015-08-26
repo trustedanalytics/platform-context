@@ -13,18 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.trustedanalytics.platformcontext.data;
+package org.trustedanalytics.platformcontext.data.externaltools;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.trustedanalytics.platformcontext.data.externaltools.ExternalTools;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-@Data
-@AllArgsConstructor
-public class PlatformContext {
+import java.util.List;
 
-    private String apiEndpoint;
+@Configuration
+@ConfigurationProperties(prefix = "external-tools")
+public class ExternalToolsConfiguration {
 
-    private ExternalTools externalTools;
+    @Getter @Setter
+    private List<ExternalTool> list;
+
+    @Bean
+    public ExternalTools externalTools() {
+        return new ExternalTools(list);
+    }
 }

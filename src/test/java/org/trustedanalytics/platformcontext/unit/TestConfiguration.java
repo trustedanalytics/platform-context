@@ -15,6 +15,7 @@
  */
 package org.trustedanalytics.platformcontext.unit;
 
+import java.util.ArrayList;
 import java.util.Properties;
 
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
@@ -22,6 +23,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import org.trustedanalytics.platformcontext.data.DataProvider;
+import org.trustedanalytics.platformcontext.data.externaltools.ExternalTools;
 
 @Configuration
 public class TestConfiguration {
@@ -41,5 +43,10 @@ public class TestConfiguration {
     @Bean
     public DataProvider getSomeClass() {
         return new DataProvider();
+    }
+
+    @Bean
+    public ExternalTools externalTools() {
+        return new ExternalTools(new ArrayList<>());
     }
 }

@@ -13,18 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.trustedanalytics.platformcontext.data;
+package org.trustedanalytics.platformcontext.data.externaltools;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.trustedanalytics.platformcontext.data.externaltools.ExternalTools;
 
 @Data
-@AllArgsConstructor
-public class PlatformContext {
+public class ExternalTool {
 
-    private String apiEndpoint;
-
-    private ExternalTools externalTools;
+    private String name;
+    private String url;
+    private boolean available;
 }

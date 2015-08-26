@@ -17,3 +17,10 @@ cf:
   resource: ${vcap.services.sso.credentials.apiEndpoint}
   uaa: ${vcap.services.sso.credentials.uaaUri}
 
+external-tools.list:
+  - name: hue
+    available: ${vcap.services.external-tools.credentials.hue.available}
+    url: ${vcap.services.external-tools.credentials.hue.url}
+  - name: arcadia
+    available: ${vcap.services.external-tools.credentials.arcadia.available}
+    url: ${vcap.services.external-tools.credentials.arcadia.url}

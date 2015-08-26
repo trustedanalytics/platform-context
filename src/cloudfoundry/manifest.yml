@@ -7,5 +7,6 @@ applications:
   path: target/platform-context-${version}.jar
   services: 
   - sso
+  - external-tools
   env:
     SPRING_PROFILES_ACTIVE: "cloud"
