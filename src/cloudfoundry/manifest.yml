@@ -10,3 +10,4 @@ applications:
   - external-tools
   env:
     SPRING_PROFILES_ACTIVE: "cloud"
+    VERSION: ${version}
