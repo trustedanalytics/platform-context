@@ -1,4 +1,4 @@
-server.port: 8080
+server.port: 9995
 
 security:
   ignored: /open,/*.js,/sdoc.jsp,/api-docs,/api-docs/default/*,/images/*,/lib/*,/css/*
@@ -24,3 +24,5 @@ external-tools.list:
   - name: arcadia
     available: ${vcap.services.external-tools.credentials.arcadia.available}
     url: ${vcap.services.external-tools.credentials.arcadia.url}
+  - name: rstudio
+    available: ${vcap.services.external-tools.credentials.rstudio.available}
