@@ -26,3 +26,8 @@ external-tools.list:
     url: ${vcap.services.external-tools.credentials.arcadia.url}
   - name: rstudio
     available: ${vcap.services.external-tools.credentials.rstudio.available}
+  - name: gearpump
+    available: ${vcap.services.external-tools.credentials.gearpump.available}
+  - name: h2o
+    available: ${vcap.services.external-tools.credentials.h2o.available}
+
