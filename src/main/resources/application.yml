@@ -17,17 +17,18 @@ cf:
   resource: ${vcap.services.sso.credentials.apiEndpoint}
   uaa: ${vcap.services.sso.credentials.uaaUri}
 
-external-tools.list:
-  - name: hue
-    available: ${vcap.services.external-tools.credentials.hue.available}
-    url: ${vcap.services.external-tools.credentials.hue.url}
-  - name: arcadia
-    available: ${vcap.services.external-tools.credentials.arcadia.available}
-    url: ${vcap.services.external-tools.credentials.arcadia.url}
-  - name: rstudio
-    available: ${vcap.services.external-tools.credentials.rstudio.available}
-  - name: gearpump
-    available: ${vcap.services.external-tools.credentials.gearpump.available}
-  - name: h2o
-    available: ${vcap.services.external-tools.credentials.h2o.available}
-
+external-tools:
+  others:
+    - name: rstudio
+      available: ${vcap.services.external-tools.credentials.rstudio.available}
+    - name: gearpump
+      available: ${vcap.services.external-tools.credentials.gearpump.available}
+    - name: h2o
+      available: ${vcap.services.external-tools.credentials.h2o.available}
+  visualizations:
+    - name: hue
+      available: ${vcap.services.external-tools.credentials.hue.available}
+      url: ${vcap.services.external-tools.credentials.hue.url}
+    - name: arcadia
+      available: ${vcap.services.external-tools.credentials.arcadia.available}
+      url: ${vcap.services.external-tools.credentials.arcadia.url}

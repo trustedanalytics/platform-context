@@ -28,10 +28,13 @@ import java.util.List;
 public class ExternalToolsConfiguration {
 
     @Getter @Setter
-    private List<ExternalTool> list;
+    private List<ExternalTool> others;
+
+    @Getter @Setter
+    private List<ExternalTool> visualizations;
 
     @Bean
     public ExternalTools externalTools() {
-        return new ExternalTools(list);
+        return new ExternalTools(others, visualizations);
     }
 }
