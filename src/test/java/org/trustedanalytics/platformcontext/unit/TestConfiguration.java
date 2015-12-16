@@ -47,6 +47,6 @@ public class TestConfiguration {
 
     @Bean
     public ExternalTools externalTools() {
-        return new ExternalTools(new ArrayList<>());
+        return new ExternalTools(new ArrayList<>(), new ArrayList<>());
     }
 }
