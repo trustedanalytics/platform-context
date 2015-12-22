@@ -35,6 +35,8 @@ public class TestConfiguration {
         ppc.setIgnoreResourceNotFound(true);
         final Properties properties = new Properties();
         properties.setProperty("cf.resource", ApiControllerTest.CF_RESOURCE);
+        properties.setProperty("cf.cli.version", "");
+        properties.setProperty("cf.cli.url", "");
         ppc.setProperties(properties);
      
         return ppc;

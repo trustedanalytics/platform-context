@@ -16,6 +16,9 @@ logging:
 cf:
   resource: ${vcap.services.sso.credentials.apiEndpoint}
   uaa: ${vcap.services.sso.credentials.uaaUri}
+  cli:
+    version: latest
+    url: https://cli.run.pivotal.io/stable?release={RELEASE}&version={VERSION}
 
 external-tools:
   others:

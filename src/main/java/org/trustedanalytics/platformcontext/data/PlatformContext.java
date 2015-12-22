@@ -24,7 +24,15 @@ import org.trustedanalytics.platformcontext.data.externaltools.ExternalTools;
 @AllArgsConstructor
 public class PlatformContext {
 
+    @JsonProperty("api_endpoint")
     private String apiEndpoint;
 
+    @JsonProperty("cli_version")
+    private String cliVersion;
+
+    @JsonProperty("cli_url")
+    private String cliUrl;
+
+    @JsonProperty("external_tools")
     private ExternalTools externalTools;
 }

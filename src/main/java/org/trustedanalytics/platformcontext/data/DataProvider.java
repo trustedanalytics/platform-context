@@ -32,13 +32,19 @@ public class DataProvider {
     @Value("${cf.resource}")
     private String apiEndpointUrl;
 
+    @Value("${cf.cli.version}")
+    private String cliVersion;
+
+    @Value("${cf.cli.url}")
+    private String cliUrl;
+
     @Autowired
     private ExternalTools externalTools;
 
     public DataProvider() { };
 
     public PlatformContext getData() {
-        return new PlatformContext(apiEndpointUrl, externalTools);
+        return new PlatformContext(apiEndpointUrl, cliVersion, cliUrl, externalTools);
     }
 
 }

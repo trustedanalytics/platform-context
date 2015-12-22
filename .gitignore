@@ -4,3 +4,6 @@ target
 # IDEA
 .idea
 *.iml
+
+# CF generated manifest
+/manifest.yml
