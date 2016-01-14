@@ -17,6 +17,7 @@ package org.trustedanalytics.platformcontext.unit;
 
 import org.trustedanalytics.platformcontext.data.PlatformContext;
 import org.trustedanalytics.platformcontext.data.DataProvider;
+import org.trustedanalytics.platformcontext.data.CFDataProvider;
 import org.trustedanalytics.platformcontext.rest.PlatformContextController;
 
 import org.junit.Before;
@@ -35,14 +36,16 @@ public class ApiControllerTest {
     public final static String CF_RESOURCE = "http://resource.com"; 
     
     private PlatformContextController sut;
-    
+
     @Autowired
     private DataProvider dataProvider;
-    
-  
+
+    private CFDataProvider cfDataProvider;
+
+
     @Before
     public void setUp() {
-        sut = new PlatformContextController(dataProvider);
+        sut = new PlatformContextController(dataProvider, cfDataProvider);
     }
 
     @Test

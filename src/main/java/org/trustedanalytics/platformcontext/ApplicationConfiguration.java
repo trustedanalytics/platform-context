@@ -18,14 +18,35 @@ package org.trustedanalytics.platformcontext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.web.client.RestTemplate;
+import org.trustedanalytics.cloud.auth.OAuth2TokenRetriever;
 import org.trustedanalytics.platformcontext.data.DataProvider;
+
+import static org.springframework.context.annotation.ScopedProxyMode.TARGET_CLASS;
+import static org.springframework.web.context.WebApplicationContext.SCOPE_REQUEST;
 
 @Configuration
 public class ApplicationConfiguration {
     
-    @Bean 
+    @Bean
     public DataProvider getDataProvider()
     {
         return new DataProvider();
+    }
+
+    @Bean
+    @Scope(value = SCOPE_REQUEST, proxyMode= TARGET_CLASS)
+    protected RestTemplate restTemplateWithOAuth2Token() {
+        /*Default SimpleClientHttpRequestFactory caused random "Unexpected end of file" errors while createing
+        requests to Clound Controller*/
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
+        return(new RestTemplate(factory));
+    }
+
+    @Bean
+    protected OAuth2TokenRetriever tokenRetriever() {
+        return new OAuth2TokenRetriever();
     }
 }
