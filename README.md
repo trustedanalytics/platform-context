@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/trustedanalytics/platform-context.svg?branch=master)](https://travis-ci.org/trustedanalytics/platform-context)
+
 # platform-context
 Provides basic information about Trusted Analytics platform instance.
 
