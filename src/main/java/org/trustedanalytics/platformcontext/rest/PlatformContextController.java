@@ -31,6 +31,7 @@ import org.trustedanalytics.platformcontext.data.externaltools.ExternalTool;
 import java.util.List;
 import java.util.UUID;
 
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 public class PlatformContextController {
@@ -46,11 +47,13 @@ public class PlatformContextController {
         this.cfDataProvider = cfDataProvider;
     }
 
+    @ApiOperation("Exposing platform specific information")
     @RequestMapping(value = GET_PLATFORM_CONTEXT_URL, method = GET, produces = APPLICATION_JSON_VALUE)
     public PlatformContext getPlatformContext() {
         return dataProvider.getData();
     }
 
+    @ApiOperation("Exposing information about external tools installed in platform")
     @RequestMapping(value = GET_EXTERNAL_TOOLS_URL, method = GET, produces = APPLICATION_JSON_VALUE)
     public List<ExternalTool> getExternalTools(@RequestParam("space") UUID spaceId,
                                                @RequestParam(value = "service_keys", required = false) boolean fetchKeys) {
