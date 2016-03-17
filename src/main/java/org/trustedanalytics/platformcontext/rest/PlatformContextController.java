@@ -47,13 +47,19 @@ public class PlatformContextController {
         this.cfDataProvider = cfDataProvider;
     }
 
-    @ApiOperation("Exposing platform specific information")
+    @ApiOperation(
+            value = "Exposing platform specific information",
+            notes = "Privilege level: Valid OAuth2 token"
+    )
     @RequestMapping(value = GET_PLATFORM_CONTEXT_URL, method = GET, produces = APPLICATION_JSON_VALUE)
     public PlatformContext getPlatformContext() {
         return dataProvider.getData();
     }
 
-    @ApiOperation("Exposing information about external tools installed in platform")
+    @ApiOperation(
+            value = "Exposing information about external tools installed in platform",
+            notes = "Privilege level: Consumer of this endpoint must be a member of specified space."
+    )
     @RequestMapping(value = GET_EXTERNAL_TOOLS_URL, method = GET, produces = APPLICATION_JSON_VALUE)
     public List<ExternalTool> getExternalTools(@RequestParam("org") UUID orgId) {
         return cfDataProvider.getExternalToolsData(orgId);
