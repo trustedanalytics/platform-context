@@ -55,8 +55,7 @@ public class PlatformContextController {
 
     @ApiOperation("Exposing information about external tools installed in platform")
     @RequestMapping(value = GET_EXTERNAL_TOOLS_URL, method = GET, produces = APPLICATION_JSON_VALUE)
-    public List<ExternalTool> getExternalTools(@RequestParam("space") UUID spaceId,
-                                               @RequestParam(value = "service_keys", required = false) boolean fetchKeys) {
-        return cfDataProvider.getExternalToolsData(spaceId, fetchKeys);
+    public List<ExternalTool> getExternalTools(@RequestParam("org") UUID orgId) {
+        return cfDataProvider.getExternalToolsData(orgId);
     }
 }

@@ -21,13 +21,6 @@ cf:
     url: https://cli.run.pivotal.io/stable?release={RELEASE}&version={VERSION}
 
 external-tools:
-  others:
-    - name: rstudio
-      available: ${vcap.services.external-tools.credentials.rstudio.available}
-    - name: gearpump
-      available: ${vcap.services.external-tools.credentials.gearpump.available}
-    - name: h2o
-      available: ${vcap.services.external-tools.credentials.h2o.available}
   visualizations:
     - name: hue
       available: ${vcap.services.external-tools.credentials.hue.available}

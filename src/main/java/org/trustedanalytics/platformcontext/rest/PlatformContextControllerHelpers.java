@@ -59,8 +59,8 @@ public class PlatformContextControllerHelpers {
         ));
     }
 
-    public List<Service> getServices() {
-        return ccClient.getExtendedServices()
+    public List<Service> getServices(UUID orgId) {
+        return ccClient.getOrganizationServices(orgId)
                 .map(Service::from)
                 .toList().toBlocking().single();
     }

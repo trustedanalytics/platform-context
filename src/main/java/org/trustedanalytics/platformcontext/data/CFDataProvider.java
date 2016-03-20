@@ -33,8 +33,8 @@ public class CFDataProvider {
         this.helpers = helpers;
     }
 
-    public List<ExternalTool> getExternalToolsData(UUID spaceId, boolean fetchKeys) {
-        List<Service> services = helpers.getServices();
+    public List<ExternalTool> getExternalToolsData(UUID orgId) {
+        List<Service> services = helpers.getServices(orgId);
         services = helpers.filterServicesByTag(services, CFDataProvider.DATA_SCIENCE_TOOL_TAG_NAME);
         List<ExternalTool> externalTools = services.stream()
                 .map(s -> {
