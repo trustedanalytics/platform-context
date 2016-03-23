@@ -24,7 +24,6 @@ import java.util.List;
 @AllArgsConstructor
 public class ExternalTools {
 
-    private List<ExternalTool> others;
     private List<ExternalTool> visualizations;
 
 }
