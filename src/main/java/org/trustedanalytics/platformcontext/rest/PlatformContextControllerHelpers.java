@@ -16,8 +16,6 @@
 
 package org.trustedanalytics.platformcontext.rest;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.trustedanalytics.cloud.cc.api.CcOperations;
 import org.trustedanalytics.platformcontext.model.Service;
 import org.trustedanalytics.platformcontext.model.ServiceInstance;
@@ -26,7 +24,6 @@ import rx.Observable;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -72,13 +69,9 @@ public class PlatformContextControllerHelpers {
                 .collect(Collectors.toList());
     }
 
-    public Observable<ServiceKey> getServiceKeys() {
-        return ccClient.getServiceKeys().map(ServiceKey::from);
-    }
-
     public List<Service> filterServicesByTag(List<Service> services, String tag) {
         return services.stream()
-                .filter(s -> Optional.ofNullable((ArrayList<String>) s.getTags()).orElse(new ArrayList<String >()).contains(tag))
+                .filter(s -> Optional.ofNullable((ArrayList<String>) s.getTags()).orElse(new ArrayList<>()).contains(tag))
                 .collect(Collectors.toList());
     }
 

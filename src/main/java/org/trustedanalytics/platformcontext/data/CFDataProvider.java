@@ -36,7 +36,7 @@ public class CFDataProvider {
     public List<ExternalTool> getExternalToolsData(UUID orgId) {
         List<Service> services = helpers.getServices(orgId);
         services = helpers.filterServicesByTag(services, CFDataProvider.DATA_SCIENCE_TOOL_TAG_NAME);
-        List<ExternalTool> externalTools = services.stream()
+        return services.stream()
                 .map(s -> {
                     ExternalTool externalTool = new ExternalTool();
                     externalTool.setName(s.getLabel());
@@ -44,6 +44,5 @@ public class CFDataProvider {
                     return externalTool;
                 })
                 .collect(Collectors.toList());
-        return externalTools;
     }
 }

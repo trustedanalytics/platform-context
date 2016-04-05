@@ -19,21 +19,18 @@ import static org.springframework.context.annotation.ScopedProxyMode.INTERFACES;
 import static org.springframework.web.context.WebApplicationContext.SCOPE_REQUEST;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.client.RestTemplate;
 import org.trustedanalytics.cloud.auth.OAuth2TokenRetriever;
 import org.trustedanalytics.cloud.cc.FeignClient;
 import org.trustedanalytics.cloud.cc.api.CcOperations;
 import org.trustedanalytics.platformcontext.StashErrorDecoder;
 import org.trustedanalytics.platformcontext.data.CFDataProvider;
 import org.trustedanalytics.platformcontext.rest.PlatformContextControllerHelpers;
-
 
 @Configuration
 public class CcConfig {
@@ -51,7 +48,7 @@ public class CcConfig {
 
     @Bean
     @Scope(value = SCOPE_REQUEST, proxyMode = INTERFACES)
-    protected CcOperations ccClient(@Qualifier("restTemplateWithOAuth2Token") RestTemplate restTemplate) {
+    protected CcOperations ccClient() {
         final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         final String token = tokenRetriever.getAuthToken(auth);
 

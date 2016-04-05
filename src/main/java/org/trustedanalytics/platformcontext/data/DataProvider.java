@@ -41,10 +41,10 @@ public class DataProvider {
     @Autowired
     private ExternalTools externalTools;
 
-    public DataProvider() { };
+    public DataProvider() {
+    }
 
     public PlatformContext getData() {
         return new PlatformContext(apiEndpointUrl, cliVersion, cliUrl, externalTools);
     }
-
 }
