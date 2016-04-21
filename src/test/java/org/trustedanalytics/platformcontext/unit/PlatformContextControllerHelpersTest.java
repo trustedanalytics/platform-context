@@ -151,7 +151,7 @@ public class PlatformContextControllerHelpersTest {
 
     private ServiceKey getServiceKey(UUID instanceGuid) {
         ServiceKey key = new ServiceKey();
-        key.setService_instance_guid(instanceGuid);
+        key.setServiceInstanceGuid(instanceGuid);
         return key;
     }
 

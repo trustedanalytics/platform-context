@@ -29,7 +29,7 @@ public class ServiceKey {
 
     private UUID guid;
     private String name;
-    private UUID service_instance_guid;
+    private UUID serviceInstanceGuid;
     private Object credentials;
 
     public static ServiceKey from(CcServiceKey input) {

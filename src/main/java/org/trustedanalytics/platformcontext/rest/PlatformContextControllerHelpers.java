@@ -83,6 +83,6 @@ public class PlatformContextControllerHelpers {
     private Map<UUID, List<ServiceKey>> createServiceKeysIndex(Observable<ServiceKey> serviceKeys) {
         return serviceKeys.toList().toBlocking().single()
                 .stream()
-                .collect(Collectors.groupingBy(ServiceKey::getService_instance_guid));
+                .collect(Collectors.groupingBy(ServiceKey::getServiceInstanceGuid));
     }
 }
