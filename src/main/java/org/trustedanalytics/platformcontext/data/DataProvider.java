@@ -22,7 +22,7 @@ import org.trustedanalytics.platformcontext.data.externaltools.ExternalTools;
 
 @Component
 public class DataProvider {
-       
+
     /*
      * get the value from cf.resource property - see also application.yml
      *
@@ -38,6 +38,12 @@ public class DataProvider {
     @Value("${cf.cli.url}")
     private String cliUrl;
 
+    @Value("${platform.version}")
+    private String platformVersion;
+
+    @Value("${platform.coreorg}")
+    private String coreOrganization;
+
     @Autowired
     private ExternalTools externalTools;
 
@@ -45,6 +51,6 @@ public class DataProvider {
     }
 
     public PlatformContext getData() {
-        return new PlatformContext(apiEndpointUrl, cliVersion, cliUrl, externalTools);
+        return new PlatformContext(apiEndpointUrl, cliVersion, cliUrl, externalTools, platformVersion, coreOrganization);
     }
 }

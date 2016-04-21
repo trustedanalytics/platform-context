@@ -37,6 +37,8 @@ public class TestConfiguration {
         properties.setProperty("cf.resource", ApiControllerTest.CF_RESOURCE);
         properties.setProperty("cf.cli.version", "");
         properties.setProperty("cf.cli.url", "");
+        properties.setProperty("platform.version", "0.1");
+        properties.setProperty("platform.coreorg", "coreOrg");
         ppc.setProperties(properties);
      
         return ppc;

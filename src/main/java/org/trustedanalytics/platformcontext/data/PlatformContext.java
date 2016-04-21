@@ -35,4 +35,10 @@ public class PlatformContext {
 
     @JsonProperty("external_tools")
     private ExternalTools externalTools;
+
+    @JsonProperty("platform_version")
+    private String platformVersion;
+
+    @JsonProperty("core_organization")
+    private String coreOrganization;
 }
